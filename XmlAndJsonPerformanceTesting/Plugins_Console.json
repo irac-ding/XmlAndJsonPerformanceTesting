@@ -1,0 +1,135 @@
+{
+  "EnabledPlugins": [
+    {
+      "DllPath": "Plugin/PackSource/TVU.CoreComponent.PackSource.dll"
+    },
+    {
+      "DllPath": "Plugin/ExternalSource/TVU.CoreComponent.ExternalSource.dll"
+    },
+    {
+      "DllPath": "Plugin/TPDSReporter/LibTPDS.dll"
+    },
+    {
+      "DllPath": "Plugin/Adapter/TVU.OptionalComponent.Adapter.dll"
+    },
+    {
+      "DllPath": "Plugin/ConfigT/TVU.OptionalComponent.ConfigT.dll"
+    },
+    {
+      "DllPath": "Plugin/VolumeChart/TVU.SharedLib.VolumeChart.dll"
+    },
+    {
+      "DllPath": "Plugin/Setting/TVU.OptionalComponent.Setting.dll"
+    },
+    {
+      "DllPath": "Plugin/WebREncoder/TVU.OptionalComponent.WebREncoder.dll"
+    },
+    {
+      "DllPath": "Plugin/WebSiteHost2/TVU.OptionalComponent.WebSiteHost2.dll"
+    },
+    {
+      "DllPath": "Plugin/ResumeLiveSession/TVU.Plugin.Receiver.ResumeLiveSession.dll"
+    },
+    {
+      "DllPath": "Plugin/FileDownloading/TVU.OptionalComponent.FileDownloading.dll"
+    },
+    {
+      "DllPath": "Plugin/Record/TVU.OptionalComponent.Record.dll"
+    },
+    {
+      "DllPath": "Plugin/Status/TVU.OptionalComponent.Status.dll"
+    },
+    {
+      "DllPath": "Plugin/AutoSyncManagement/TVU.Plugin.Receiver.AutoSyncManagement.dll"
+    },
+    {
+      "DllPath": "Plugin/ProgressiveDownload/TVU.Plugin.Receiver.ProgressiveDownload.dll"
+    },
+    {
+      "DllPath": "Plugin/SetLocation/TVU.Plugin.Receiver.SetLocation.dll"
+    },
+    {
+      "DllPath": "Plugin/Storage/TVU.OptionalComponent.Storage.dll"
+    }
+  ],
+  "DisabledPlugins": [
+    {
+      "DllPath": "Plugin/RenderSource/TVU.CoreComponent.RenderSource.dll"
+    },
+    {
+      "DllPath": "Plugin/GridSource/TVU.CoreComponent.GridSource.dll"
+    },
+    {
+      "DllPath": "Plugin/GridSource/TVU.CoreComponent.GridPeerStatusSHM.dll"
+    },
+    {
+      "DllPath": "Plugin/GridSource/TVU.CoreComponent.GridPeerStatusRelay.dll"
+    },
+    {
+      "DllPath": "Plugin/TVUMeSource/TVU.CoreComponent.TVUMeSource.dll"
+    },
+    {
+      "DllPath": "Plugin/LocalSDISource/TVU.CoreComponent.LocalSDISource.dll"
+    },
+    {
+      "DllPath": "Plugin/Alert/TVU.CoreComponent.TVUAlert.dll"
+    },
+    {
+      "DllPath": "Plugin/AutoRecord/TVU.OptionalComponent.AutoRecord.dll"
+    },
+    {
+      "DllPath": "Plugin/Booking2/TVU.OptionalComponent.Booking2.dll"
+    },
+    {
+      "DllPath": "Plugin/ExternalEncoder/TVU.OptionalComponent.ExternalEncoder.dll"
+    },
+    {
+      "DllPath": "Plugin/MatchInput/TVU.Plugin.Receiver.MatchInput.dll"
+    },
+    {
+      "DllPath": "Plugin/TokenSystem/TVU.OptionalComponent.TokenSystem.dll"
+    },
+    {
+      "DllPath": "Plugin/VideoFeedback/TVU.OptionalComponent.VideoFeedback.dll"
+    },
+    {
+      "DllPath": "Plugin/AutoDownload/TVU.Plugin.Receiver.AutoDownload.dll"
+    },
+    {
+      "DllPath": "Plugin/ProgressiveDownload/TVU.Plugin.Receiver.ProgressiveDownload.dll"
+    },
+    {
+      "DllPath": "Plugin/FTPUploadService/TVU.OptionalComponent.FTPUploadService.dll"
+    },
+    {
+      "DllPath": "Plugin/DCapStarter/TVU.Plugin.Receiver.DCapStarter.dll"
+    },
+    {
+      "DllPath": "Plugin/NCS/TVU.Plugin.Receiver.NCS.dll"
+    },
+    {
+      "DllPath": "Plugin/FileShim/TVU.Plugin.Receiver.FileShim.dll"
+    },
+    {
+      "DllPath": "Plugin/GridEncoder/TVU.OptionalComponent.GridEncoder.dll"
+    },
+    {
+      "DllPath": "Plugin/Studio3/TVU.OptionalComponent.Studio3.dll"
+    },
+    {
+      "DllPath": "Plugin/TimeLock/TVU.Plugin.Receiver.TimeLock.dll"
+    },
+    {
+      "DllPath": "Plugin/VisionTag/TVU.Plugin.Receiver.VisionTag.dll"
+    },
+    {
+      "DllPath": "Plugin/SmartCaption/TVU.Plugin.Receiver.SmartCaption.dll"
+    },
+    {
+      "DllPath": "Plugin/LiveEncoder/TVU.OptionalComponent.LiveEncoder.dll"
+    },
+    {
+      "DllPath": "Plugin/VLAN/TVU.OptionalComponent.VLAN.dll"
+    }
+  ]
+}

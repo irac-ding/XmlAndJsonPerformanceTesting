@@ -1,0 +1,87 @@
+Index: CoreComponent/TVU.CoreComponent.GridSwitchClient/CommandCenterProxy.cs
+===================================================================
+--- CoreComponent/TVU.CoreComponent.GridSwitchClient/CommandCenterProxy.cs	(revision 43607)
++++ CoreComponent/TVU.CoreComponent.GridSwitchClient/CommandCenterProxy.cs	(working copy)
+@@ -21,12 +21,10 @@
+  * =============================================*/
+ 
+ using NLog;
+-using TVU.SharedLib.GenericUtility;
+-using TVU.SharedLib.WebSocketClient;
+ 
+ namespace TVU.CoreComponent.GridSwitchClient
+ {
+-    public sealed class CommandCenterProxy : AbstractWebSocketProxy
++    public sealed class CommandCenterProxy : AbstractWebSocketProxy2
+     {
+         #region Log
+ 
+@@ -71,17 +69,5 @@
+             logger.Debug("HandleModernCategory() rawMsg {0}.", rawMsg);
+             CentralManagementMainMessagePump.Instance.PumpMessage(message);
+         }
+-
+-        public override void Init(string myIdHex, GetInitMsgHandler getInitMsg, GetExitMsgHandler getExitMsg)
+-        {
+-            if (!string.IsNullOrEmpty(ServerUrl))
+-            {
+-                logger.Info("Init() with myIdHex {0}.", myIdHex);
+-                string url = string.Format("{0}?pid={1}", ServerUrl, myIdHex.ToLower());
+-
+-                Proxy = new TVUWebSocketClientProxy();
+-                Proxy?.RegisterClient(ClientID, url, getInitMsg, OnMessageReceived, getExitMsg, ModuleConfig.Instance.CommandCenterWSIsCheckStatus, ModuleConfig.Instance.CommandCenterWSCheckStatusInterval, ModuleConfig.Instance.CommandCenterWSStatusTimeoutSeconds);
+-            }
+-        }
+     }
+ }
+Index: CoreComponent/TVU.CoreComponent.GridSwitchClient/TVU.CoreComponent.GridSwitchClient_v14.csproj
+===================================================================
+--- CoreComponent/TVU.CoreComponent.GridSwitchClient/TVU.CoreComponent.GridSwitchClient_v14.csproj	(revision 43607)
++++ CoreComponent/TVU.CoreComponent.GridSwitchClient/TVU.CoreComponent.GridSwitchClient_v14.csproj	(working copy)
+@@ -96,6 +96,7 @@
+   </ItemGroup>
+   <ItemGroup>
+     <Compile Include="AbstractWebSocketProxy.cs" />
++    <Compile Include="AbstractWebSocketProxy2.cs" />
+     <Compile Include="GenericLiveSwitchMessage.cs" />
+     <Compile Include="GridSwitchProxy.cs" />
+     <Compile Include="CommandCenterProxy.cs" />
+Index: SharedLib/TVU.SharedLib.GenericUtility/packages.config
+===================================================================
+--- SharedLib/TVU.SharedLib.GenericUtility/packages.config	(revision 43607)
++++ SharedLib/TVU.SharedLib.GenericUtility/packages.config	(working copy)
+@@ -3,6 +3,7 @@
+   <package id="Mono.Posix" version="4.0.0.0" targetFramework="net461" />
+   <package id="Newtonsoft.Json" version="12.0.1" targetFramework="net461" />
+   <package id="NLog" version="4.5.11" targetFramework="net461" />
++  <package id="RabbitMQ.Client" version="3.6.9" targetFramework="net461" />
+   <package id="System.Net.NetworkInformation" version="4.3.0" targetFramework="net461" />
+   <package id="TaskScheduler" version="2.8.7" targetFramework="net461" />
+ </packages>
+\ No newline at end of file
+Index: SharedLib/TVU.SharedLib.GenericUtility/TVU.SharedLib.GenericUtility_v14.csproj
+===================================================================
+--- SharedLib/TVU.SharedLib.GenericUtility/TVU.SharedLib.GenericUtility_v14.csproj	(revision 43607)
++++ SharedLib/TVU.SharedLib.GenericUtility/TVU.SharedLib.GenericUtility_v14.csproj	(working copy)
+@@ -71,6 +71,10 @@
+       <HintPath>$(SolutionDir)packages\NLog.4.5.11\lib\net45\NLog.dll</HintPath>
+       <Private>True</Private>
+     </Reference>
++    <Reference Include="RabbitMQ.Client, Version=3.6.9.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
++      <HintPath>$(SolutionDir)packages\RabbitMQ.Client.3.6.9\lib\net45\RabbitMQ.Client.dll</HintPath>
++      <Private>True</Private>
++    </Reference>
+     <Reference Include="System" />
+     <Reference Include="System.Configuration" />
+     <Reference Include="System.Data" />
+@@ -118,6 +122,10 @@
+     <Compile Include="Notification\NotificationCenterModel.cs" />
+     <Compile Include="Notification\TVUInteractivity.cs" />
+     <Compile Include="Notification\TVUNotification.cs" />
++    <Compile Include="RabbitMQ\RMQClient.cs" />
++    <Compile Include="RabbitMQ\RMQConnection.cs" />
++    <Compile Include="RabbitMQ\RMQSender.cs" />
++    <Compile Include="RabbitMQ\RMQSubscriber.cs" />
+     <Compile Include="ReflectionGetPropertiesUtility.cs" />
+     <Compile Include="System\PerformanceUtility.cs" />
+     <Compile Include="Properties\AssemblyInfo.cs" />
